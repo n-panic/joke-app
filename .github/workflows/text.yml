@@ -20,6 +20,6 @@ jobs:
       npm ci
       npm run build
     
-    name: Test the application
+    - name: Test the application
     run: |
       npm test
