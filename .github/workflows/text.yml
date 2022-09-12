@@ -1,4 +1,4 @@
-name: testWorkflow
+name: Test Workflow
 
 on:
   push:
@@ -6,20 +6,22 @@ on:
       - "main"
 
 jobs:
-  echo:
+  build-test:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 16
+      - uses: actions/checkout@v3
 
-    - name: Install dependencies
-    run: |
-      npm ci
-      npm run build
-    
-    - name: Test the application
-    run: |
-      npm test
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: |
+          npm ci
+          npm run build
+
+      - name: Test the application
+        run: |
+          npm test
+      
