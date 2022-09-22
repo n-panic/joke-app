@@ -1,23 +1,21 @@
-# CircleCI configuration file
-
 version: 2.1
 
 jobs:
   build-test:
-  docker:
-    - image: 
-  steps:
-    - checkout
-    - run: npm ci
-    - run: npm run build
-    - run: npm test
+    docker:
+      - image: cimg/node:16.17.0
+    steps:
+      - checkout
+      - run: npm ci
+      - run: npm run build
+      - run: npm test
 
 
 workflows:
   buildtest:
     jobs:
       - build-test:
-        filters:
-          branches:
-            only:
-              -cirlceci
+          filters:
+            branches:
+              only:
+                - circleci
