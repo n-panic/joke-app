@@ -16,7 +16,7 @@ jobs:
 workflows:
   buildtest:
     jobs:
-      - build-test
+      - build-test:
         filters:
           branches:
             only:
