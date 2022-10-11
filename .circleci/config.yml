@@ -32,7 +32,7 @@ workflows:
       - node/run:
           npm-run: build
           filters:
-            branches:
+            branches:  
               only:
                 - circleci
 
