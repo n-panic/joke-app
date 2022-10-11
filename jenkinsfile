@@ -5,8 +5,9 @@ pipeline {
             steps {
                 sh "echo 'Building...'"
                 script {
-                    sh 'npm install'
-                    sh 'npm run build'
+                    sh 'npm install -g pnpm'
+                    sh 'pnpm install'
+                    sh 'pnpm run build'
                 }
                 sh "echo 'Build complete'"
             }
